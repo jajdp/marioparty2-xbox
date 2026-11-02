@@ -8,17 +8,27 @@ read what each does before letting it touch your tree.
 |---|---|---|---|
 | 1 | [`parche_uwp_build.py`](parche_uwp_build.py) | step `parches`, first | The three changes the **game itself** needs: the `UWP_BUILD` option in its `CMakeLists.txt`, renaming `main()` to `<prefix>_uwp_main()`, and taking `SDL_INIT_HAPTIC` out under `_UWP` |
 | 2 | [`resolver_conflictos.py`](resolver_conflictos.py) | step `parches`, after worleydl's patches | The four conflicts those patches hit on this tree. All four resolve the same way: **keep both sides**, with worleydl's under `#ifdef _UWP` so the tree still builds for the desktop |
-| 3 | [`sellar.cmake`](sellar.cmake) | before **every** configure — `recompilar`, `pc` and `libs` | Re-stamps `N64Recomp-browser`'s web patches so the next configure does not try to apply them again and die in a three-way merge |
+| 3 | [`parche_data_path.py`](parche_data_path.py) | step `parches`, last | Defines `recompui_uwp_data_path` in RecompFrontend and makes `get_app_folder_path` use it. **Without it the appx does not link** — see below |
+| 4 | [`sellar.cmake`](sellar.cmake) | before **every** configure — `recompilar`, `pc` and `libs` | Re-stamps `N64Recomp-browser`'s web patches so the next configure does not try to apply them again and die in a three-way merge |
 
-All three are **idempotent**: run them twice and the second time they say "already there" and
-change nothing. All three take the game's tree as an argument and have **no path of their own**
+All four are **idempotent**: run them twice and the second time they say "already there" and
+change nothing. All four take the game's tree as an argument and have **no path of their own**
 baked in.
+
+⚠ **Tool 3 is the one that is easy to miss**, because it is not in any of worleydl's patches: it
+is this project's own, and the symptom of forgetting it only shows at the very end, when the appx
+links:
+
+```text
+main.obj : error LNK2019: unresolved external symbol recompui_uwp_data_path
+```
 
 ## Running one by hand
 
 ```powershell
 py -3.13 -X utf8 tools\parche_uwp_build.py <tree> MarioParty2Recompiled marioparty
 py -3.13 -X utf8 tools\resolver_conflictos.py <tree>
+py -3.13 -X utf8 tools\parche_data_path.py <tree>
 cmake -P tools\sellar.cmake <tree>
 ```
 

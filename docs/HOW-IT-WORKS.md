@@ -183,6 +183,18 @@ SDL2** (its CMakeLists' `FetchContent`), whose headers declare neither `SDL_WinR
 nor `SDL_WINRT_PATH_LOCAL_FOLDER` — WinRT's SDL only enters when the appx is linked. The path
 travels through a global the wrapper writes before entering the game.
 
+⚠⚠ **That global is not in any of worleydl's patches, and forgetting it costs a whole build.**
+It is defined in RecompFrontend's `recompui/src/util/file.cpp`, and `get_app_folder_path` has to
+return it before it looks at `portable.txt`. Nothing complains until the very last step, when the
+appx links:
+
+```text
+main.obj : error LNK2019: unresolved external symbol recompui_uwp_data_path
+```
+
+[`tools/parche_data_path.py`](../tools/parche_data_path.py) does it, and `compilar.ps1` calls it
+at the end of the `parches` step.
+
 **10. To test with nobody in front of the console you need two switches, and both are FILES** in
 `LocalState` — they go up or come down in seconds, with no recompiling and no reinstalling:
 

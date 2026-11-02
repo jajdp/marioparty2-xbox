@@ -95,6 +95,7 @@ Dos archivos opcionales en esa misma carpeta permiten probar sin mando: `autoarr
 | `does not match index` al hacer `git apply --3way` | `git add -A` en ese submódulo primero — y `git reset` después |
 | `lld-link: error: duplicate symbol: osPfsIsPlug_recomp` | La del parche y la del juego, las dos definidas. Manda la del juego |
 | `error C3861: AddVectoredExceptionHandler` | No se declara para UWP: hay que declararla a mano en el envoltorio |
+| `LNK2019: unresolved external symbol recompui_uwp_data_path` **al enlazar el appx** | No se corrió `tools/parche_data_path.py`. Es el único cambio que no está en ninguno de los parches de worleydl, y nada se queja hasta el último paso |
 | El enlace deja `uwp_PickMultipleFiles` sin resolver | El paquete UWP es de la rama equivocada: para esta familia es `rt64` |
 | Arranca sin vídeo y se queda creando la ventana | `SDL_INIT_HAPTIC`: el SDL de WinRT no tiene vibración y `SDL_Init` falla para todo el conjunto |
 | Ningún botón responde | Falta `SDL_HINT_JOYSTICK_WGI` |

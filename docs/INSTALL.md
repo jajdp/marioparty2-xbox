@@ -93,6 +93,7 @@ Two optional files in that same folder make testing without a controller possibl
 | `does not match index` from `git apply --3way` | `git add -A` in that submodule first — and `git reset` afterwards |
 | `lld-link: error: duplicate symbol: osPfsIsPlug_recomp` | The patch's and the game's both defined. Keep the game's |
 | `error C3861: AddVectoredExceptionHandler` | Not declared for UWP: declare it by hand in the wrapper |
+| `LNK2019: unresolved external symbol recompui_uwp_data_path` **when the appx links** | `tools/parche_data_path.py` was not run. It is the one change that is in none of worleydl's patches, and nothing complains until the very last step |
 | The link leaves `uwp_PickMultipleFiles` unresolved | The UWP bundle is from the wrong branch: for this family it is `rt64` |
 | Boots with no video and hangs creating the window | `SDL_INIT_HAPTIC`: WinRT's SDL has no haptics and `SDL_Init` fails the whole set |
 | No button responds | `SDL_HINT_JOYSTICK_WGI` is missing |

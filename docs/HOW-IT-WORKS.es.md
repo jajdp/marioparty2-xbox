@@ -187,6 +187,18 @@ escritorio** (el `FetchContent` de su CMakeLists), cuyas cabeceras no declaran
 el appx. La ruta viaja por una variable global que escribe el envoltorio antes de entrar al
 juego.
 
+⚠⚠ **Esa variable no está en ninguno de los parches de worleydl, y olvidarla cuesta una
+compilación entera.** Se define en el `recompui/src/util/file.cpp` de RecompFrontend, y
+`get_app_folder_path` tiene que devolverla antes de mirar `portable.txt`. Nada se queja hasta el
+último paso, cuando enlaza el appx:
+
+```text
+main.obj : error LNK2019: unresolved external symbol recompui_uwp_data_path
+```
+
+Lo hace [`tools/parche_data_path.py`](../tools/parche_data_path.py), y `compilar.ps1` lo llama al
+final del paso `parches`.
+
 **10. Para probar sin nadie delante de la consola hacen falta dos interruptores, y los dos son
 ARCHIVOS** de `LocalState` — se suben o se quitan en segundos, sin recompilar ni reinstalar:
 
