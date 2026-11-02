@@ -8,7 +8,7 @@ recompilation built on **N64Recomp + RT64** — to an **Xbox Series X in Develop
 
 The same recipe builds its two siblings, which share an engine
 ([`n64hub/mario-party-engine`](https://github.com/n64hub/mario-party-engine)) and pin the same
-four library commits: [`marioparty2-xbox`](https://github.com/jajdp/marioparty2-xbox) and
+four library commits: [`marioparty-xbox`](https://github.com/jajdp/marioparty-xbox) and
 [`marioparty3-xbox`](https://github.com/jajdp/marioparty3-xbox).
 
 ## Which console this was tested on
