@@ -6,10 +6,10 @@ recompilation built on **N64Recomp + RT64** — to an **Xbox Series X in Develop
 
 *(Español: [README.es.md](README.es.md))*
 
-The same recipe builds its two siblings, which share an engine
-([`n64hub/mario-party-engine`](https://github.com/n64hub/mario-party-engine)) and pin the same
-four library commits: [`marioparty-xbox`](https://github.com/jajdp/marioparty-xbox) and
-[`marioparty3-xbox`](https://github.com/jajdp/marioparty3-xbox).
+The three games on this engine
+([`n64hub/mario-party-engine`](https://github.com/n64hub/mario-party-engine)) pin the same four
+library commits, so this same recipe builds any of them: what changes is the CMake target's name
+and the ROM.
 
 ## Which console this was tested on
 

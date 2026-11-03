@@ -6,10 +6,10 @@ estática hecha con **N64Recomp + RT64**— a una **Xbox Series X en modo desarr
 
 *(English: [README.md](README.md))*
 
-La misma receta construye sus dos hermanos, que comparten motor
-([`n64hub/mario-party-engine`](https://github.com/n64hub/mario-party-engine)) y fijan los mismos
-cuatro commits de bibliotecas: [`marioparty-xbox`](https://github.com/jajdp/marioparty-xbox) y
-[`marioparty3-xbox`](https://github.com/jajdp/marioparty3-xbox).
+Los tres juegos de este motor
+([`n64hub/mario-party-engine`](https://github.com/n64hub/mario-party-engine)) fijan los mismos
+cuatro commits de bibliotecas, así que esta misma receta construye cualquiera de ellos: lo que
+cambia es el nombre del objetivo de CMake y la ROM.
 
 ## En qué consola se probó
 
