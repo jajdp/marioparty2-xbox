@@ -26,7 +26,7 @@ main.obj : error LNK2019: unresolved external symbol recompui_uwp_data_path
 ## Running one by hand
 
 ```powershell
-py -3.13 -X utf8 tools\parche_uwp_build.py <tree> MarioParty2Recompiled marioparty
+py -3.13 -X utf8 tools\parche_uwp_build.py <tree> MarioParty2Recompiled marioparty2
 py -3.13 -X utf8 tools\resolver_conflictos.py <tree>
 py -3.13 -X utf8 tools\parche_data_path.py <tree>
 cmake -P tools\sellar.cmake <tree>

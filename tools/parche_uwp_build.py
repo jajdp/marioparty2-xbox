@@ -10,7 +10,7 @@ Mismo arreglo que en los forks UWP de worleydl y en el port de Rush 2 de la casa
     despues de que SDL cree la CoreWindow.
 
 Uso:  py -3.13 parche_uwp_build.py <arbol> <objetivo> <prefijo>
-      p. ej.  C:\\mp\\src  MarioParty2Recompiled  marioparty
+      p. ej.  C:\\mp2\\src  MarioParty2Recompiled  marioparty2
 
 El <arbol> es la raiz del checkout del juego, la que tiene CMakeLists.txt y src\\main\\main.cpp.
 No hay ninguna ruta por defecto a proposito: el argumento es obligatorio.
