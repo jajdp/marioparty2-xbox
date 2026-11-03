@@ -5,6 +5,19 @@ All notable changes to this repository. Dates are `YYYY-MM-DD`.
 This file is not translated: it is a historical record that grows with each version, and
 translating it would mean two histories that drift apart.
 
+## [1.0.4] — 2026-11-03
+
+### Changed
+
+- **Passages that introduced a fact as "the same as in the other port" now state the fact.** They
+  named no repository, so there was nothing for the reader to go and look up, and the fact itself
+  went unsaid. The docstring of `tools/parche_uwp_build.py` credited worleydl's UWP forks — which it
+  should — and a port of ours, which the reader cannot look up.
+
+  Still said, because the reader can act on it: everything that is **not** ours — the upstream
+  project, the third-party forks, the files taken under their own license — and the sentences that
+  place this port among others without naming any, which stand on their own.
+
 ## [1.0.3] — 2026-11-03
 
 ### Fixed

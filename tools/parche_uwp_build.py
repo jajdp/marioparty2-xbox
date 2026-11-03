@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Anade la opcion UWP_BUILD al CMakeLists del juego y renombra su main() bajo _UWP.
 
-Mismo arreglo que en los forks UWP de worleydl y en el port de Rush 2 de la casa:
+Mismo arreglo que en los forks UWP de worleydl:
   - con -DUWP_BUILD=ON el juego produce BIBLIOTECAS ESTATICAS en vez de un .exe, y define
     _UWP, que es lo que enciende los parches de plataforma (no el SDK de la Store);
   - lo que es solo del ejecutable de escritorio (flags de enlazado, el icono app.rc, el
